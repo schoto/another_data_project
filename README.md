@@ -1,3 +1,4 @@
+```
 DROP SCHEMA IF EXISTS library_management;
 CREATE SCHEMA IF NOT EXISTS library_management;
 
@@ -10,4 +11,4 @@ CREATE TABLE IF NOT EXISTS library_management.user_login (
 	sign_up_on DATE,
 	email_id TEXT
 );
-
+```
