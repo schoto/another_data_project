@@ -28,4 +28,17 @@ CREATE TABLE IF NOT EXISTS library_management.author (
 	last_name TEXT,
 	publications_count INT
 );
+
+DROP TABLE IF EXISTS library_management.books;
+CREATE TABLE IF NOT EXISTS library_management.books (
+	book_id TEXT PRIMARY KEY,
+    book_code TEXT,
+    book_name TEXT,
+    author_id TEXT REFERENCES library_management.author (author_id),
+	publisher_id TEXT REFERENCES library_management.publisher (publisher_id),
+    book_version TEXT,
+    release_date DATE,
+    available_from DATE,
+    is_available BOOLEAN
+);
 ```
