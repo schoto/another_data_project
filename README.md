@@ -41,4 +41,17 @@ CREATE TABLE IF NOT EXISTS library_management.books (
     available_from DATE,
     is_available BOOLEAN
 );
+
+DROP TABLE IF EXISTS library_management.staff;
+CREATE TABLE IF NOT EXISTS library_management.staff (
+	staff_id TEXT PRIMARY KEY,
+    first_name TEXT,
+	last_name TEXT,
+    staff_role TEXT,
+    start_date DATE,
+    last_date DATE,
+    is_active BOOLEAN,
+    work_shift_start TIME,
+	work_shift_end TIME
+);
 ```
