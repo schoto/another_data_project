@@ -54,4 +54,18 @@ CREATE TABLE IF NOT EXISTS library_management.staff (
     work_shift_start TIME,
 	work_shift_end TIME
 );
+
+DROP TABLE IF EXISTS library_management.readers;
+CREATE TABLE IF NOT EXISTS library_management.readers (
+	reader_id TEXT PRIMARY KEY,
+    first_name TEXT,
+	last_name TEXT,
+	registered_on DATE,
+	books_issued_total INT,
+	books_issued_current INT,
+	is_issued BOOLEAN,
+	last_issue_date DATE,
+	total_fine FLOAT,
+	current_fine FLOAT
+);
 ```
