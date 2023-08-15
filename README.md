@@ -68,4 +68,22 @@ CREATE TABLE IF NOT EXISTS library_management.readers (
 	total_fine FLOAT,
 	current_fine FLOAT
 );
+DROP TABLE IF EXISTS library_management.books_issue;
+CREATE TABLE IF NOT EXISTS library_management.books_issue (
+	issue_id SERIAL PRIMARY KEY,
+	book_id TEXT REFERENCES library_management.books (book_id),
+	issued_to TEXT REFERENCES library_management.readers (reader_id),
+	issued_on DATE,
+	return_on DATE,
+	current_fine FLOAT,
+	fine_paid BOOLEAN,
+	payment_transaction_id TEXT
+);
+
+DROP TABLE IF EXISTS library_management.settings;
+CREATE TABLE IF NOT EXISTS library_management.settings (
+	book_issue_count_per_reader INT,
+	fine_per_day FLOAT,
+	book_return_in_days INT
+);
 ```
